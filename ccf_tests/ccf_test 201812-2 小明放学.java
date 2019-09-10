@@ -2,7 +2,7 @@ import java.util.*;
 
 //ccf_test 201812-2 小明放学
 //	此题可能需要long
-public class 小明放学
+public class Main
 {
 	public static void main(String[] args)
 	{
