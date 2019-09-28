@@ -59,9 +59,7 @@ int main()
 	nextArr(a, b, lb);
 	res = KMP(a, b, la, lb);
 	for (int i = 0; i < res.size(); i++)
-	{
 		printf("%d\n", res[i]);
-	}
 	system("pause");
 	return 0;
 }
