@@ -15,10 +15,7 @@ void nextArr(char* a, char* b, int lb)
 	for (int i = 2; i <= lb; i++)
 	{
 		while (j > 0 && b[i] != b[j + 1])
-			if (b[i] != b[j + 1])
-				j = p[j]; //往前翻记录了有相同前缀的j
-			else
-				p[i] = p[j];
+			j = p[j]; //往前翻记录了有相同前缀的j
 		if (b[i] == b[j + 1])
 			j++; //i匹配成功了，i继续往后
 		p[i] = j;
