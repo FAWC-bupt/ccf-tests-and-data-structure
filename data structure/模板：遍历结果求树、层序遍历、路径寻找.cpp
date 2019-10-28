@@ -90,6 +90,7 @@ int high_Tree(TTree T)
 
 /*
 	模板：层序遍历
+	i: 二叉树深度
 */
 void LevelorderTraversal(TTree root, int i)
 {
