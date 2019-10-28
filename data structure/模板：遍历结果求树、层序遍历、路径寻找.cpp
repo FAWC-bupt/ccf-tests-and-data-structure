@@ -107,6 +107,36 @@ void LevelorderTraversal(TTree root, int i)
 
 /*
 	模板：寻找特定值所在节点到根节点的路径，本质上是后序非递归遍历
+此处提供非递归后序遍历代码：
+void PostorderTraversal(TTree t)
+{
+    TTree temp = t, pre = NULL;
+
+    while (temp || !s.empty())
+    {
+        while (temp)
+        {
+            s.push(temp);
+            temp = temp->Left;
+        }
+        while (!s.empty())
+        {
+            temp = s.top();
+            s.pop();
+            if (temp->Right == pre || temp->Right == NULL)
+            {
+                printf("%d ", temp->Data);
+                pre = temp;
+            }
+            else
+            {
+                s.push(temp);
+                temp = temp->Right;
+                break;
+            }
+        }
+    }
+}
 */
 void findRoad(TTree t, int value)
 {
