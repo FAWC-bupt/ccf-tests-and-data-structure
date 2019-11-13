@@ -134,10 +134,12 @@ int main()
 					if (tmp1->num + tmp2->num > v[i]->num && (i == 0 || tmp1->num + tmp2->num < v[i - 1]->num))
 					{
 						v.insert(v.begin() + i, creat(tmp1->coef * tmp2->coef, tmp1->num + tmp2->num));
+						break;
 					}
 					else if (i == v.size() - 1 && tmp1->num + tmp2->num < v[i]->num)
 					{
 						v.insert(v.end(), creat(tmp1->coef * tmp2->coef, tmp1->num + tmp2->num));
+						break;
 					}
 				}
 			}
