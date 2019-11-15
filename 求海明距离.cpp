@@ -6,6 +6,8 @@
 
 using namespace std;
 
+#define MAXSIZE 9
+
 /*
 000000000
 011100101
@@ -24,7 +26,7 @@ int main()
     int *a = new int[n], min = INT32_MAX, temp;
     for (size_t i = 0; i < n; i++)
     {
-        bitset<9> bit;
+        bitset<MAXSIZE> bit;
         cin >> bit;
         a[i] = bit.count();
     }
