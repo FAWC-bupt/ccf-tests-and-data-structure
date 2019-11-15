@@ -6,9 +6,10 @@
 
 using namespace std;
 
-#define MAXSIZE 9
+#define LEN 9
 
 /*
+8
 000000000
 011100101
 010101000
@@ -21,23 +22,27 @@ using namespace std;
 
 int main()
 {
-    int n;
+    int n, xi, xj, min = INT32_MAX;
     cin >> n;
-    int *a = new int[n], min = INT32_MAX, temp;
+    bitset<LEN> *a = new bitset<LEN>[n], temp;
     for (size_t i = 0; i < n; i++)
     {
-        bitset<MAXSIZE> bit;
+        bitset<LEN> bit;
         cin >> bit;
-        a[i] = bit.count();
+        a[i] = bit;
     }
     for (size_t i = 0; i < n - 1; i++)
     {
         for (size_t j = i + 1; j < n; j++)
         {
-            temp = abs(a[i] - a[j]);
-            if (temp < min)
-                min = temp;
+            temp = a[i] ^ a[j];
+            if (temp.count() < min)
+            {
+                min = temp.count();
+                xi = i;
+                xj = j;
+            }
         }
     }
-    cout << temp << endl;
+    cout << min << " " << xi << " " << xj << endl;
 }
