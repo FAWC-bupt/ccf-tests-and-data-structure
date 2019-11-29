@@ -20,13 +20,10 @@ typedef struct BinTree
 	struct BinTree* nextr;
 } *binTree;
 
-int flag = 1;
-binTree TNode;
-
 void SecondOptimal(binTree& T, char* a, double* w, int l, int r)
 {
 	// 次优查找树的构造
-	// 注意取地址符号&!!!
+	// 注意取传递符号&!!!
 	// cout << endl;
 	int tmp = l;
 	double min = abs(w[l] - w[r]); // 最左边点的deltaP
@@ -34,7 +31,7 @@ void SecondOptimal(binTree& T, char* a, double* w, int l, int r)
 	if (l)
 		dw = w[r] + w[l - 1];
 	else
-		dw = w[r];
+		dw = w[r]; // l为0的时候w[l-1]为0
 	for (int i = l + 1; i <= r; i++)
 	{
 		// cout << abs(dw - w[i] - w[i - 1]) << endl;
@@ -45,11 +42,6 @@ void SecondOptimal(binTree& T, char* a, double* w, int l, int r)
 		}
 	}
 	T = (binTree)malloc(sizeof(binTree));
-	if (flag)
-	{
-		TNode = T;
-		flag = 0;
-	}
 	if (!T)
 		exit(0);
 	T->data = a[tmp];
