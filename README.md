@@ -1,2 +1,2 @@
-# ccf-tests-and-data-structure
-有关ccf认证的题目和数据结构课程的代码
+# 自家用代码库
+有关学习中创造出的各种代码
