@@ -31,7 +31,7 @@ void tempSort(int *a, int n)
 				left = mid + 1;
 		}
 		// 以上与折半查找一模一样
-		for (int j = i - 1; j >= mid; j--) // 因为mid可能为1，因此不用a[j]=a[j-1]的形式，以防数组越界
+		for (int j = i - 1; j >= mid; j--) // 因为mid可能为0，因此不用a[j]=a[j-1]的形式，以防数组越界
 			a[j + 1] = a[j];
 		/*
 			下面这行代码是重点！！！
