@@ -39,7 +39,7 @@ void tempSort(int *a, int n)
 			但这是错误的。考虑本代码第25行开始的while循环，因为每次l和r改变量为1，
 			因此退出条件是l==r后的再一次循环，这里还要注意的一点是，本算法默认升序
 			在这最后一次循环中，如果：
-			1） temp < a[mid]，那么应当插入的当然是数组a中的mid位置，因为由二分查找定义temp > a[mid-1]，
+			1） 	temp < a[mid]，那么应当插入的当然是数组a中的mid位置，因为由二分查找定义temp > a[mid-1]，
 				把a[mid]后面的元素后移就行，这时候
 				a[mid] = temp;
 			2）	temp >= a[mid]，注意！这个时候temp < a[mid+1]，为了保证升序，必须插入a[mid+1]才行
