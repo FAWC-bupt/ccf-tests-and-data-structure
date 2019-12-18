@@ -23,6 +23,7 @@ int maxbit(int data[], int n) //辅助函数，求数据的最大位数
     }
     return d;
 }
+
 void radixsort(int data[], int n) // LSD法基数排序
 {
     int d = maxbit(data, n);
@@ -54,6 +55,13 @@ void radixsort(int data[], int n) // LSD法基数排序
         for (j = 0; j < n; j++) // 将临时数组的内容复制到data中
             data[j] = tmp[j];
         radix = radix * 10;
+        
+        /*
+        以下代码输出每一位基数（桶）排序后的序列
+        for (j = 0; j < n; j++)
+            cout << data[j] << " ";
+        cout << endl;
+        */
     }
     delete[] tmp;
     delete[] count;
